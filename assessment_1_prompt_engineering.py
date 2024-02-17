@@ -26,7 +26,7 @@ prompts = {
               Dalam diskusi tentang perkembangan fintech, Andi memulai dengan menyatakan keyakinannya bahwa fintech telah signifikan dalam memodernisasi sektor keuangan, memberikan akses yang lebih mudah dan efisien kepada layanan keuangan. Budi menambahkan, menyoroti bagaimana aplikasi pembayaran digital telah memudahkan transaksi keuangan. Namun, Clara mengingatkan tentang tantangan yang datang bersama inovasi ini, khususnya terkait regulasi dan keamanan data, menekankan pentingnya memperhatikan aspek keamanan dalam pengembangan fintech. Dina mengakhiri diskusi dengan menekankan pentingnya mencari keseimbangan antara inovasi dan keamanan untuk memastikan fintech dapat berkembang tanpa merugikan pengguna. Diskusi ini menunjukkan bahwa meskipun fintech membawa banyak manfaat dalam mempermudah akses ke layanan keuangan dan meningkatkan efisiensi transaksi, industri ini juga dihadapkan pada tantangan penting yang harus diatasi, yaitu regulasi yang memadai dan perlindungan data pengguna.
 
               [INST]I have a discussion text in Bahasa Indonesia:""",
-      "Llama-2-7B-32K-Instruct": """[INST]Write a concise summary of the discussion text, return your responses consisted of 5 lines that cover the key points of the discussion text in Bahasa Indonesia.""",
+      "Llama-2-7B-32K-Instruct": """[INST]Write a concise summary of the discussion text, return your responses consisted of 5 lines that cover the key points of the discussion text.""",
       "Qwen1.5-1.8B-Chat": """Write a concise summary of the discussion text. Use Bahasa Indonesia."""
 }
 
@@ -90,8 +90,8 @@ if 'api_key' in st.session_state:
 
         if selected_model == 'Mistral-7B-Instruct-v0.2':
             complete_prompt = f"{prompts[selected_model]}\n\n{USER_PROMPT}\n\nBased on that discussion text, summarize in one formal brief paragraph in Bahasa Indonesia."
-        elif selected_model == 'Llama-2-7B-32K-Instruct':
-            complete_prompt = f"{prompts[selected_model]}\n\n{USER_PROMPT}\n\n[\INST]"
+        # elif selected_model == 'Llama-2-7B-32K-Instruct':
+        #     complete_prompt = f"{prompts[selected_model]}\n\n{USER_PROMPT}\n\n[\INST]"
         else:
             complete_prompt = f"{prompts[selected_model]}\n\n{USER_PROMPT}"
 
