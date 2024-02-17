@@ -27,7 +27,7 @@ prompts = {
 
               [INST]I have a discussion text in Bahasa Indonesia:""",
       "Llama-2-7B-32K-Instruct": """[INST]Write a concise summary of the discussion text, return your responses with 5 lines of indirect sentences that cover the key points of the discussion text in Bahasa Indonesia.[\INST]""",
-      "Qwen1.5-1.8B-Chat": """Write a concise summary of a discussion given by user"""
+      "Qwen1.5-1.8B-Chat": """Write a concise summary of the discussion text, return your responses with 5 lines of indirect sentences that cover the key points of the discussion text in Bahasa Indonesia."""
 }
 
 # Model identifiers mapping.
