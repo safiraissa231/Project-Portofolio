@@ -15,7 +15,7 @@ import streamlit as st
 # Define prompts for each model in Bahasa Indonesia.
 prompts = {
     "Mistral-7B-Instruct-v0.2": """<s>[INST] <<SYS>> You are a helpful, respectful, and honest assistant for summarize discussion text in Bahasa Indonesia.<</SYS>>
-              I have a discussion text in Bahasa Indonesia:
+              I have an example discussion text in Bahasa Indonesia:
               Membahas perkembangan fintech dalam sebuah diskusi, Andi memulai dengan pernyataan penuh keyakinan, "Saya percaya bahwa fintech telah memberikan kontribusi besar dalam memodernisasi sektor keuangan kita." Pernyataan ini menandai awal dari sebuah dialog yang mendalam dan informatif mengenai dampak positif serta tantangan yang dihadapi oleh teknologi keuangan.
               Menanggapi Andi, Budi menyatakan dukungannya, "Benar, Andi. Aplikasi pembayaran digital saja telah membuat transaksi keuangan jauh lebih mudah." Budi menekankan bagaimana kemudahan akses dan efisiensi yang ditawarkan oleh aplikasi pembayaran digital telah mengubah cara orang bertransaksi, menunjukkan salah satu aspek paling nyata dari pengaruh fintech.
               Namun, Clara mengambil sudut pandang yang lebih kritis. Dia menambahkan ke dalam diskusi, "Saya setuju dengan kalian berdua, tapi jangan lupakan bahwa tantangan regulasi dan keamanan data juga meningkat seiring dengan inovasi ini." Clara mengingatkan bahwa di balik kemudahan yang ditawarkan, terdapat isu penting yang tidak boleh diabaikan. Isu tersebut berkaitan dengan bagaimana fintech diatur dan bagaimana data pengguna dilindungi dari ancaman keamanan.
@@ -26,7 +26,7 @@ prompts = {
               Dalam diskusi tentang perkembangan fintech, Andi memulai dengan menyatakan keyakinannya bahwa fintech telah signifikan dalam memodernisasi sektor keuangan, memberikan akses yang lebih mudah dan efisien kepada layanan keuangan. Budi menambahkan, menyoroti bagaimana aplikasi pembayaran digital telah memudahkan transaksi keuangan. Namun, Clara mengingatkan tentang tantangan yang datang bersama inovasi ini, khususnya terkait regulasi dan keamanan data, menekankan pentingnya memperhatikan aspek keamanan dalam pengembangan fintech. Dina mengakhiri diskusi dengan menekankan pentingnya mencari keseimbangan antara inovasi dan keamanan untuk memastikan fintech dapat berkembang tanpa merugikan pengguna. Diskusi ini menunjukkan bahwa meskipun fintech membawa banyak manfaat dalam mempermudah akses ke layanan keuangan dan meningkatkan efisiensi transaksi, industri ini juga dihadapkan pada tantangan penting yang harus diatasi, yaitu regulasi yang memadai dan perlindungan data pengguna.
 
               [INST]I have a discussion text in Bahasa Indonesia:""",
-      "Llama-2-7B-32K-Instruct": """Write a concise summary of the discussion text, return your responses consisted of 5 lines that cover the key points of the discussion text in Bahasa Indonesia.""",
+      "Llama-2-7B-32K-Instruct": """[INST]Write a concise summary of the discussion text, return your responses consisted of 5 lines that cover the key points of the discussion text in Bahasa Indonesia.""",
       "Qwen1.5-1.8B-Chat": """Write a concise summary of the discussion text. Use Bahasa Indonesia."""
 }
 
@@ -90,6 +90,8 @@ if 'api_key' in st.session_state:
 
         if selected_model == 'Mistral-7B-Instruct-v0.2':
             complete_prompt = f"{prompts[selected_model]}\n\n{USER_PROMPT}\n\nBased on that discussion text, summarize in one formal brief paragraph in Bahasa Indonesia."
+        elif selected_model == 'Llama-2-7B-32K-Instruct':
+            complete_prompt = f"{prompts[selected_model]}\n\n{USER_PROMPT}\n\n[\INST]"
         else:
             complete_prompt = f"{prompts[selected_model]}\n\n{USER_PROMPT}"
 
