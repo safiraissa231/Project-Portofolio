@@ -90,8 +90,6 @@ if 'api_key' in st.session_state:
 
         if selected_model == 'Mistral-7B-Instruct-v0.2':
             complete_prompt = f"{prompts[selected_model]}\n\n{USER_PROMPT}\n\nBased on that discussion text, summarize in one formal brief paragraph in Bahasa Indonesia."
-        elif selected_model == 'Llama-2-7B-32K-Instruct':
-            complete_prompt = f"{prompts[selected_model]}\n\n{USER_PROMPT}\n\n[\INST]"
         else:
             complete_prompt = f"{prompts[selected_model]}\n\n{USER_PROMPT}"
 
