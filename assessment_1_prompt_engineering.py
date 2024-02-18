@@ -96,7 +96,7 @@ if 'api_key' in st.session_state:
             complete_prompt = f"{prompts[selected_model]}\n\n{USER_PROMPT}"
 
         model_name = model_identifiers.get(selected_model, "")
-        response = generate_completion(complete_prompt, model_name, temperature=0.7, max_tokens=2048, n=1)
+        response = generate_completion(complete_prompt, model_name, temperature=0.8, max_tokens=512, n=1)
 
         if response and "choices" in response and response["choices"]:
             summary = response["choices"][0].get("text", "No summary generated.")
