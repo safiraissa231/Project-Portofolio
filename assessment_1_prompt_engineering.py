@@ -43,8 +43,9 @@ prompts = {
                                 Example 4:
                                 Discussion: Dina, dengan bijak, mengakhiri diskusi dengan mencetuskan ide penting, "Penting bagi kita untuk menemukan solusi yang seimbang antara inovasi dan keamanan, agar fintech dapat terus berkembang tanpa merugikan pengguna." Dina menekankan pentingnya mencari keseimbangan, dimana inovasi teknologi finansial dapat berlanjut tanpa mengorbankan privasi dan keamanan pengguna.
                                 Summary: Dina mengakhiri diskusi dengan menekankan pentingnya mencari keseimbangan antara inovasi dan keamanan untuk memastikan fintech dapat berkembang tanpa merugikan pengguna.
-                                
-                                Based on that discussion text, summarize in one formal brief paragraph in Bahasa Indonesia. [\INST]""",
+
+                                [\INST]
+                                [INST]I have a discussion text in Bahasa Indonesia: """,
       "Qwen1.5-1.8B-Chat": """Write a concise summary of the discussion text. Use Bahasa Indonesia."""
 }
 
