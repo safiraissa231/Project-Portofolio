@@ -106,7 +106,7 @@ if 'api_key' in st.session_state:
         USER_PROMPT = re.sub(r'\[[^\]]+\]', '', USER_PROMPT)
         USER_PROMPT = re.sub(r'\n+', ' ', USER_PROMPT)
 
-        if selected model == 'Qwen1.5-1.8B-Chat':
+        if selected_model == 'Qwen1.5-1.8B-Chat':
             complete_prompt = f"{prompts[selected_model]}\n\n{USER_PROMPT}"
         else :
             complete_prompt = f"{prompts[selected_model]}\n\n{USER_PROMPT}\n\nBased on that discussion text, summarize in one formal brief paragraph in Bahasa Indonesia."
